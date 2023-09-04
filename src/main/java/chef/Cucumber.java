@@ -1,10 +1,10 @@
 package chef;
 
-public class Cucumber   extends Vigetable{
+public class Cucumber   extends VegetableImpl {
     public Cucumber(String name, int calories) {
         super(name, calories);
     }
-    String color = " не красный";
+   private String color = " не красный";
 
 
 }

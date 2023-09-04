@@ -2,7 +2,7 @@ package chef;
 
 public class SaladImpl implements Salad{
     @Override
-    public void addVegetable(Vigetable newVegetable) {
+    public void addVegetable(VegetableImpl newVegetable) {
 
     }
 

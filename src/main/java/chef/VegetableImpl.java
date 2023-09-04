@@ -1,13 +1,13 @@
 package chef;
 
-public  abstract class Vigetable {
-    public Vigetable(String name, int calories) {
+public  abstract class VegetableImpl implements Vegetable {
+    public VegetableImpl(String name, int calories) {
         this.name = name;
         this.calories = calories;
     }
 
-    String name;
-    int calories;
+   private String name;
+   private int calories;
 
     public String getName() {
         return name;
@@ -25,6 +25,10 @@ public  abstract class Vigetable {
         this.calories = calories;
     }
 
+    @Override
+    public void sliceVegetable() {
+        System.out.println("Овощи нарезаны");
 
+    }
 
 }

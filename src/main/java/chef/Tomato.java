@@ -1,9 +1,9 @@
 package chef;
 
-public class Tomato extends Vigetable{
+public class Tomato extends VegetableImpl {
     public Tomato(String name, int calories) {
         super(name, calories);
 
     }
-    String type = "berries";
+   private String type = "berries";
 }
