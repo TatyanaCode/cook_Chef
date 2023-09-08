@@ -4,5 +4,5 @@ public interface Salad {
     void  addVegetable(VegetableImpl newVegetable);
     int getCalories();
     void sortVegetableByCalories();
-    void findVegetableByCalories( int calories);
+    void findVegetableByCalories( int  minCalories, int maxCalories);
 }

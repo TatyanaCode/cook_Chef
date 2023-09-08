@@ -7,6 +7,7 @@ import java.util.List;
 public class SaladImpl implements Salad {
 
     private List<VegetableImpl> vegetables = new ArrayList<>();
+    int calories = 0;
 
     @Override
     public void addVegetable(VegetableImpl newVegetable) {
@@ -15,21 +16,30 @@ public class SaladImpl implements Salad {
 
     @Override
     public int getCalories() {
-        int calories = 0;
+
         for (VegetableImpl vegetable :
                 vegetables) {
-            calories +=getCalories();
+            calories += getCalories();
         }
         return calories;
     }
+
     // Сортировка List  обьектов по  свойству
     @Override
     public void sortVegetableByCalories() {
         vegetables.sort(Comparator.comparing(VegetableImpl::getCalories));
     }
 
+    // поиск  овощей по каллорийности
     @Override
-    public void findVegetableByCalories(int calories) {
+    public void findVegetableByCalories(int minCalories, int maxCalories) {
+        for (VegetableImpl vegetable :
+                vegetables) {
+            calories = getCalories();
+            if (calories >= minCalories && calories <= maxCalories){
+                vegetables.add(vegetable);
+            }
+        }
 
     }
 }
