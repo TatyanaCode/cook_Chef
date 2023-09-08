@@ -3,6 +3,6 @@ package chef;
 public interface Salad {
     void  addVegetable(VegetableImpl newVegetable);
     int getCalories();
-    void sortCaloriesByCalories();
+    void sortVegetableByCalories();
     void findVegetableByCalories( int calories);
 }

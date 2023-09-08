@@ -1,19 +1,31 @@
 package chef;
 
-public class SaladImpl implements Salad{
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class SaladImpl implements Salad {
+
+    private List<VegetableImpl> vegetables = new ArrayList<>();
+
     @Override
     public void addVegetable(VegetableImpl newVegetable) {
-
+        vegetables.add(newVegetable);
     }
 
     @Override
     public int getCalories() {
-        return 0;
+        int calories = 0;
+        for (VegetableImpl vegetable :
+                vegetables) {
+            calories +=getCalories();
+        }
+        return calories;
     }
-
+    // Сортировка List  обьектов по  свойству
     @Override
-    public void sortCaloriesByCalories() {
-
+    public void sortVegetableByCalories() {
+        vegetables.sort(Comparator.comparing(VegetableImpl::getCalories));
     }
 
     @Override
