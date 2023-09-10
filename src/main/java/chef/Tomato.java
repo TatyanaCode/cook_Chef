@@ -5,5 +5,11 @@ public class Tomato extends VegetableImpl {
         super(name, calories);
 
     }
-   private String type = "berries";
+
+    @Override
+    public String toString() {
+        return getName()+ getCalories();
+    }
+
+    private String type = "berries";
 }

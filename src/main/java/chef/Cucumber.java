@@ -4,7 +4,13 @@ public class Cucumber   extends VegetableImpl {
     public Cucumber(String name, int calories) {
         super(name, calories);
     }
-   private String color = " не красный";
+
+    @Override
+    public String toString() {
+        return  getName()+ getCalories();
+    }
+
+    private String color = " не красный";
 
 
 }

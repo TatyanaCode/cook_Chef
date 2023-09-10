@@ -6,8 +6,17 @@ import java.util.List;
 
 public class SaladImpl implements Salad {
 
+    public List<VegetableImpl> getVegetables() {
+        return vegetables;
+    }
+
+    public void setVegetables(List<VegetableImpl> vegetables) {
+        this.vegetables = vegetables;
+    }
+
     private List<VegetableImpl> vegetables = new ArrayList<>();
     int calories = 0;
+
 
     @Override
     public void addVegetable(VegetableImpl newVegetable) {

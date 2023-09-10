@@ -5,4 +5,5 @@ public interface Salad {
     int getCalories();
     void sortVegetableByCalories();
     void findVegetableByCalories( int  minCalories, int maxCalories);
+    String toString();
 }
