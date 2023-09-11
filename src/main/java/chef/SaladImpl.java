@@ -5,6 +5,17 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SaladImpl implements Salad {
+    private List<VegetableImpl> vegetables = new ArrayList<>();
+    int calories = 0;
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
 
     public List<VegetableImpl> getVegetables() {
         return vegetables;
@@ -14,9 +25,6 @@ public class SaladImpl implements Salad {
         this.vegetables = vegetables;
     }
 
-    private List<VegetableImpl> vegetables = new ArrayList<>();
-    int calories = 0;
-
 
     @Override
     public void addVegetable(VegetableImpl newVegetable) {
@@ -24,11 +32,11 @@ public class SaladImpl implements Salad {
     }
 
     @Override
-    public int getCalories() {
+    public int sumCalories() {
 
         for (VegetableImpl vegetable :
                 vegetables) {
-            calories += getCalories();
+            calories += sumCalories();
         }
         return calories;
     }
@@ -44,7 +52,7 @@ public class SaladImpl implements Salad {
     public void findVegetableByCalories(int minCalories, int maxCalories) {
         for (VegetableImpl vegetable :
                 vegetables) {
-            calories = getCalories();
+            calories = sumCalories();
             if (calories >= minCalories && calories <= maxCalories){
                 vegetables.add(vegetable);
             }
