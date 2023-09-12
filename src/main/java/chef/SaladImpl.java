@@ -3,7 +3,7 @@ package chef;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
+//м
 public class SaladImpl implements Salad {
     private List<VegetableImpl> vegetables = new ArrayList<>();
     int calories = 0;
