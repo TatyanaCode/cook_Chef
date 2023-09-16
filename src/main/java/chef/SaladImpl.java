@@ -3,18 +3,10 @@ package chef;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-//м
+
 public class SaladImpl implements Salad {
     private List<VegetableImpl> vegetables = new ArrayList<>();
-    int calories = 0;
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
+    private int sum = 0;
 
 
     public List<VegetableImpl> getVegetables() {
@@ -33,12 +25,10 @@ public class SaladImpl implements Salad {
 
     @Override
     public int sumCalories() {
-
-        for (VegetableImpl vegetable :
-                vegetables) {
-            calories += sumCalories();
+        for (VegetableImpl vegetable : vegetables) {
+            sum += vegetable.getCalories();
         }
-        return calories;
+        return sum;
     }
 
     // Сортировка List  обьектов по  свойству
@@ -49,14 +39,13 @@ public class SaladImpl implements Salad {
 
     // поиск  овощей по каллорийности
     @Override
-    public void findVegetableByCalories(int minCalories, int maxCalories) {
-        for (VegetableImpl vegetable :
-                vegetables) {
-            calories = sumCalories();
-            if (calories >= minCalories && calories <= maxCalories){
-                vegetables.add(vegetable);
+    public List<VegetableImpl> findVegetableByCalories(int calories) {
+        List<VegetableImpl> veg = new ArrayList<>();
+        for (VegetableImpl vegetable : vegetables) {
+            if (vegetable.getCalories() == calories) {
+                veg.add(vegetable);
             }
         }
-
+        return veg;
     }
 }

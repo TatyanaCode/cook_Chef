@@ -1,9 +1,16 @@
 package chef;
 
+import java.util.List;
+
 public interface Salad {
-    void  addVegetable(VegetableImpl newVegetable);
+    void addVegetable(VegetableImpl newVegetable);
+
     int sumCalories();
+
     void sortVegetableByCalories();
-    void findVegetableByCalories( int  minCalories, int maxCalories);
+
     String toString();
+
+    // поиск  овощей по каллорийности
+    List<VegetableImpl> findVegetableByCalories(int calories);
 }
