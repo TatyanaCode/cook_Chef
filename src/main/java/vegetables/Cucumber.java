@@ -1,4 +1,6 @@
-package chef;
+package vegetables;
+
+import vegetables.VegetableImpl;
 
 public class Cucumber   extends VegetableImpl {
     public Cucumber(String name, int calories) {

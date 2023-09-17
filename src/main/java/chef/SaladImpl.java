@@ -1,31 +1,34 @@
 package chef;
 
+import vegetables.Vegetable;
+import vegetables.VegetableImpl;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class SaladImpl implements Salad {
-    private List<VegetableImpl> vegetables = new ArrayList<>();
+    private List<Vegetable> vegetables = new ArrayList<>();
     private int sum = 0;
 
 
-    public List<VegetableImpl> getVegetables() {
+    public List<Vegetable> getVegetables() {
         return vegetables;
     }
 
-    public void setVegetables(List<VegetableImpl> vegetables) {
+    public void setVegetables(List<Vegetable> vegetables) {
         this.vegetables = vegetables;
     }
 
 
     @Override
-    public void addVegetable(VegetableImpl newVegetable) {
+    public void addVegetable(Vegetable newVegetable) {
         vegetables.add(newVegetable);
     }
 
     @Override
     public int sumCalories() {
-        for (VegetableImpl vegetable : vegetables) {
+        for (Vegetable vegetable : vegetables) {
             sum += vegetable.getCalories();
         }
         return sum;
@@ -34,16 +37,16 @@ public class SaladImpl implements Salad {
     // Сортировка List  обьектов по  свойству
     @Override
     public void sortVegetableByCalories() {
-        vegetables.sort(Comparator.comparing(VegetableImpl::getCalories));
+        vegetables.sort(Comparator.comparing(Vegetable::getCalories));
     }
 
     // поиск  овощей по каллорийности
     @Override
-    public List<VegetableImpl> findVegetableByCalories(int calories) {
-        List<VegetableImpl> veg = new ArrayList<>();
-        for (VegetableImpl vegetable : vegetables) {
-            if (vegetable.getCalories() == calories) {
-                veg.add(vegetable);
+    public List<Vegetable> findVegetableByCalories(int calories) {
+        List<Vegetable> veg = new ArrayList<>();
+        for (Vegetable vegetable1 : vegetables) {
+            if (vegetable1.getCalories() == calories) {
+                veg.add(vegetable1);
             }
         }
         return veg;

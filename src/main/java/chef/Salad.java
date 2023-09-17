@@ -1,9 +1,12 @@
 package chef;
 
+import vegetables.Vegetable;
+import vegetables.VegetableImpl;
+
 import java.util.List;
 
 public interface Salad {
-    void addVegetable(VegetableImpl newVegetable);
+    void addVegetable(Vegetable newVegetable);
 
     int sumCalories();
 
@@ -12,5 +15,5 @@ public interface Salad {
     String toString();
 
     // поиск  овощей по каллорийности
-    List<VegetableImpl> findVegetableByCalories(int calories);
+    List<Vegetable> findVegetableByCalories(int calories);
 }

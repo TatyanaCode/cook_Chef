@@ -1,4 +1,4 @@
-package chef;
+package vegetables;
 
 public  abstract class VegetableImpl implements Vegetable {
     public VegetableImpl(String name, int calories) {
@@ -8,7 +8,7 @@ public  abstract class VegetableImpl implements Vegetable {
 
    private String name;
    private int calories;
-
+    @Override
     public String getName() {
         return name;
     }
@@ -16,7 +16,7 @@ public  abstract class VegetableImpl implements Vegetable {
     public void setName(String name) {
         this.name = name;
     }
-
+    @Override
     public int getCalories() {
         return calories;
     }
